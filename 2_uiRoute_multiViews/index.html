@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  ng-app="ui-router-named-views">
+<head>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div ui-view="header" class="row"></div>
+
+  <div class="row">
+    <!-- Sidebar/Nav -->
+    <div ui-view="sidebar" class="col-xs-3"></div>
+    <!-- Content -->
+    <div ui-view="content" class="col-xs-9"></div>
+  </div>
+
+  <!-- Footer -->
+  <div ui-view="footer" class="row"></div>
+</div>
+
+<!-- compiled JavaScript -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+<script src="app.js"></script>
+<script src="alt-one/config.js"></script>
+<script src="alt-two/config.js"></script>
+<script src="alt-three/config.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="MainCtrl as vm">
+  <h1>Angular {{vm.angularVersion}}</h1>
+  <h2>
+    Intro to ngMessages
+  </h2>
+  <hr />
+  <h2>Demo</h2>
+
+  <form name="myForm">
+    <input type="email" name="myField" ng-model="field" required minlength="5" />
+    <div ng-show="myForm.myField.$error">
+      <div ng-show="myForm.myField.$error.required">This field is required</div>
+      <div ng-show="myForm.myField.$error.minlength">Input too short</div>
+      <div ng-show="myForm.myField.$error.email">This field must be an email</div>
+    </div>
+  </form>
+</body>
+</html>

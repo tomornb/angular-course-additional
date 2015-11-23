@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="uiRouterExample">
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+  <meta charset="utf-8">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Brand</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="list">Book List</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="container">
+    <div ui-view></div>
+  </div>
+
+<script type="text/ng-template" id="templates/home.html">
+  <div class="row">
+    <h3>Welcome to our book shop</h3>
+    <p>Feel free to look around. Enjoy your time here</p>
+  </div>
+</script>
+
+<script type="text/ng-template" id="templates/list.html">
+<div class="row">
+  <div class="span4">
+    <ul>
+      <li ng-repeat="item in books" ng-class="{active: isSelectedItem(item)}">
+        <a ng-href="#/list/{{item.name}}" ng-click="selectItem(item)">{{item.name}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="span8"></div>
+</div>
+</script>
+
+<script src="../libs/angular/angular.min.js" ></script>
+<script src="../libs/angular-ui-ui-router/release/angular-ui-router.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

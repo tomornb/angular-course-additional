@@ -2,6 +2,7 @@ angular.module('ui-router-named-views', [
   'ui-router-named-views.alt-one',
   'ui-router-named-views.alt-two',
   'ui-router-named-views.alt-three',
+  'ui-router-named-views.alt-four',  
   'ui.router'
 ]).config([
   '$stateProvider', '$urlRouterProvider',

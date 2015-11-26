@@ -16,10 +16,10 @@
 
   <form name="myForm">
     <input type="email" name="myField" ng-model="field" required minlength="5" />
-    <div ng-show="myForm.myField.$error">
-      <div ng-show="myForm.myField.$error.required">This field is required</div>
-      <div ng-show="myForm.myField.$error.minlength">Input too short</div>
-      <div ng-show="myForm.myField.$error.email">This field must be an email</div>
+    <div ng-messages="myForm.myField.$error">
+      <div ng-message="required">This field is required</div>
+      <div ng-message="minlength">Input too short</div>
+      <div ng-message="email">This field must be an email</div>
     </div>
   </form>
 </body>

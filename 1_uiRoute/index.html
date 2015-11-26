@@ -37,11 +37,12 @@
   <div class="span4">
     <ul>
       <li ng-repeat="item in books" ng-class="{active: isSelectedItem(item)}">
-        <a ng-href="#/list/{{item.name}}" ng-click="selectItem(item)">{{item.name}}</a>
+        <!-- <a ng-href="#/list/{{item.name}}" ng-click="selectItem(item)">{{item.name}}</a> or use below for  route by url -->
+        <a ui-sref=".item({item: item.name})" ng-click="selectItem(item)">{{item.name}}</a>
       </li>
     </ul>
   </div>
-  <div class="span8"></div>
+  <div class="span8" ui-view></div>
 </div>
 </script>
 
